@@ -1,0 +1,72 @@
+{
+    "AllowCapa": [
+        false,
+        "bool"
+    ],
+    "AllowPostLogin": [
+        false,
+        "bool"
+    ],
+    "CsrfTokenProtection": [
+        true,
+        "bool"
+    ],
+    "CronTimeToRunSeconds": [
+        10800,
+        "int"
+    ],
+    "CronTimeToKillSeconds": [
+        10800,
+        "int"
+    ],
+    "CronTimeFile": [
+        ".clear.dat",
+        "string"
+    ],
+    "UserSelectsDateFormat": [
+        false,
+        "bool"
+    ],
+    "DateFormat": [
+        "DD\/MM\/YYYY",
+        "spec",
+        "\\Aurora\\System\\Enums\\DateFormat"
+    ],
+    "DateFormatList": [
+        [
+            "DD\/MM\/YYYY",
+            "MM\/DD\/YYYY",
+            "DD Month YYYY"
+        ],
+        "array"
+    ],
+    "Disabled": [
+        false,
+        "bool"
+    ],
+    "GetAccountWithPassword": [
+        true,
+        "bool"
+    ],
+    "Language": [
+        "English",
+        "string"
+    ],
+    "AutodetectLanguage": [
+        true,
+        "bool"
+    ],
+    "PostLoginErrorRedirectUrl": [
+        ".\/",
+        "string"
+    ],
+    "TimeFormat": [
+        "F24",
+        "spec",
+        "\\Aurora\\System\\Enums\\TimeFormat"
+    ],
+    "ProductName": [
+        "Afterlogic WebMail Lite PHP",
+        "string"
+    ]
+}

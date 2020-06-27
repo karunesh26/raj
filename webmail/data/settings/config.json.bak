@@ -1,0 +1,180 @@
+{
+    "SiteName": [
+        "My WebMail",
+        "string"
+    ],
+    "LicenseKey": [
+        "",
+        "string"
+    ],
+    "AdminLogin": [
+        "admin",
+        "string"
+    ],
+    "AdminPassword": [
+        "$2y$07$a0885fd79da11653d688cOD5Exu.UoQldADyptXrbdvGaqIM5t..2",
+        "string"
+    ],
+    "AdminLanguage": [
+        "English",
+        "string"
+    ],
+    "DBType": [
+        "MySQL",
+        "spec",
+        "\\Aurora\\System\\Enums\\DbType"
+    ],
+    "DBPrefix": [
+        "wmv1_",
+        "string"
+    ],
+    "DBHost": [
+        "localhost",
+        "string"
+    ],
+    "DBName": [
+        "rajwazif_webm894",
+        "string"
+    ],
+    "DBLogin": [
+        "rajwazif_webm894",
+        "string"
+    ],
+    "DBPassword": [
+        ".S4O!39p2Y",
+        "string"
+    ],
+    "UseSlaveConnection": [
+        false,
+        "bool"
+    ],
+    "DBSlaveHost": [
+        "127.0.0.1",
+        "string"
+    ],
+    "DBSlaveName": [
+        "",
+        "string"
+    ],
+    "DBSlaveLogin": [
+        "root",
+        "string"
+    ],
+    "DBSlavePassword": [
+        "",
+        "string"
+    ],
+    "DBUseExplain": [
+        false,
+        "bool"
+    ],
+    "DBUseExplainExtended": [
+        false,
+        "bool"
+    ],
+    "DBLogQueryParams": [
+        false,
+        "bool"
+    ],
+    "DBDebugBacktraceLimit": [
+        false,
+        "bool"
+    ],
+    "EnableLogging": [
+        false,
+        "bool"
+    ],
+    "EnableEventLogging": [
+        false,
+        "bool"
+    ],
+    "LoggingLevel": [
+        "Full",
+        "spec",
+        "\\Aurora\\System\\Enums\\LogLevel"
+    ],
+    "LogFileName": [
+        "log-{Y-m-d}.txt",
+        "string"
+    ],
+    "LogCustomFullPath": [
+        "",
+        "string"
+    ],
+    "LogPostView": [
+        "",
+        "string"
+    ],
+    "EnableMultiChannel": [
+        false,
+        "bool"
+    ],
+    "EnableMultiTenant": [
+        false,
+        "bool"
+    ],
+    "TenantGlobalCapa": [
+        "",
+        "string"
+    ],
+    "AllowThumbnail": [
+        true,
+        "bool"
+    ],
+    "ThumbnailMaxFileSizeMb": [
+        5,
+        "int"
+    ],
+    "AppCookiePath": [
+        "\/",
+        "string"
+    ],
+    "CacheCtrl": [
+        true,
+        "bool"
+    ],
+    "CacheLangs": [
+        true,
+        "bool"
+    ],
+    "CacheTemplates": [
+        true,
+        "bool"
+    ],
+    "DisplayServerErrorInformation": [
+        true,
+        "bool"
+    ],
+    "EnableImap4PlainAuth": [
+        false,
+        "bool"
+    ],
+    "RedirectToHttps": [
+        false,
+        "bool"
+    ],
+    "SocketConnectTimeoutSeconds": [
+        20,
+        "int"
+    ],
+    "SocketGetTimeoutSeconds": [
+        20,
+        "int"
+    ],
+    "SocketVerifySsl": [
+        false,
+        "bool"
+    ],
+    "UseAppMinJs": [
+        true,
+        "bool"
+    ],
+    "XFrameOptions": [
+        "",
+        "string"
+    ],
+    "RemoveOldLogs": [
+        true,
+        "bool"
+    ]
+}

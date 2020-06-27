@@ -1,0 +1,43 @@
+<div class="panel_top">
+	<div class="buttons">
+		<span class="button add_account_button" data-bind="i18n: {'key': '%MODULENAME%/ACTION_ADD_NEW_SERVER'}, click: routeCreateServer"></span>
+	</div>
+	<h2 class="settings_heading" data-bind="i18n: {'key': '%MODULENAME%/HEADING_SERVERS_SETTINGS'}"></h2>
+</div>
+
+<div class="panel_center">
+	<div class="fields" data-bind="visible: servers().length === 0 && !createMode() && serversRetrieved()">
+		<div class="fieldset">
+			<div class="hint" style="margin: 0;" data-bind="i18n: {'key': '%MODULENAME%/INFO_NO_SERVERS'}"></div>
+		</div>
+	</div>
+	<div data-bind="visible: createMode() || servers().length > 0">
+		<div class="items_list account_list" data-bind="visible: !createMode()">
+			<div data-bind="foreach: servers">
+				<div class="item account" data-bind="css: {'selected': iId === $parent.editedServerId()},  click: function () { $parent.routeEditServer(iId); }">
+					<span class="title" data-bind="text: sName"></span>
+					<span class="link fetcher" data-bind="i18n: {'key': 'COREWEBCLIENT/ACTION_DELETE'}, click: function (oModel, oEv) { oEv.stopPropagation(); $parent.deleteServer(iId); }"></span>
+				</div>
+			</div>
+		</div>
+		<div class="tabs" data-bind="visible: createMode() || editedServerId() !== 0">
+			<div class="tabs_container">
+				<div class="tab">
+					<div class="fields">
+						<div class="fieldset">
+							<!-- ko template: {name: oServerPairPropertiesView.ViewTemplate, data: oServerPairPropertiesView} --><!-- /ko -->
+						</div>
+
+						<div class="buttons">
+							<span class="button" data-bind="i18n: {'key': 'COREWEBCLIENT/ACTION_SAVE'}, click: save, visible: !createMode() && !isSaving()"></span>
+							<span class="button" data-bind="i18n: {'key': 'COREWEBCLIENT/ACTION_SAVE_IN_PROGRESS'}, visible: !createMode() && isSaving()"></span>
+							<span class="button" data-bind="i18n: {'key': 'COREWEBCLIENT/ACTION_CREATE'}, click: save, visible: createMode() && !isSaving()"></span>
+							<span class="button" data-bind="i18n: {'key': 'COREWEBCLIENT/ACTION_CREATE_IN_PROGRESS'}, visible: createMode() && isSaving()"></span>
+							<span class="button secondary_button" data-bind="i18n: {'key': 'COREWEBCLIENT/ACTION_CANCEL'}, click: routeServerList, visible: createMode()"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

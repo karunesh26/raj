@@ -1,0 +1,1 @@
+<i class="<?php echo ($cur_type == 'inr') ? 'fa fa-inr' : 'fa fa-dollar'; ?>"></i>

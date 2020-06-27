@@ -1,0 +1,14 @@
+{
+    "Disabled": [
+        false,
+        "bool"
+    ],
+    "AuthModuleName": [
+        "StandardAuth",
+        "string"
+    ],
+    "AllowNewUsersRegister": [
+        false,
+        "bool"
+    ]
+}

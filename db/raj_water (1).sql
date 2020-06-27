@@ -1,0 +1,1746 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 28, 2017 at 07:25 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `raj_water`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category_master`
+--
+
+CREATE TABLE IF NOT EXISTS `category_master` (
+  `category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `category_master`
+--
+
+INSERT INTO `category_master` (`category_id`, `category_name`) VALUES
+(1, 'RO PLANT'),
+(2, 'ISI'),
+(3, 'NON ISI'),
+(4, 'WATER SOFTNER');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `city_master`
+--
+
+CREATE TABLE IF NOT EXISTS `city_master` (
+  `city_id` int(11) NOT NULL AUTO_INCREMENT,
+  `zone_id` int(11) NOT NULL DEFAULT '0',
+  `state_id` int(11) NOT NULL,
+  `city_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`city_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1216 ;
+
+--
+-- Dumping data for table `city_master`
+--
+
+INSERT INTO `city_master` (`city_id`, `zone_id`, `state_id`, `city_name`) VALUES
+(1, 0, 1, 'Visakhapatnam'),
+(2, 0, 1, 'Vijayawada'),
+(3, 0, 1, 'Guntur'),
+(4, 0, 1, 'Nellore'),
+(5, 0, 1, 'Kurnool'),
+(6, 0, 1, 'Rajahmundry'),
+(7, 0, 1, 'Kakinada'),
+(8, 0, 1, 'Tirupati'),
+(9, 0, 1, 'Anantapur'),
+(10, 0, 1, 'Kadapa'),
+(11, 0, 1, 'Vizianagaram'),
+(12, 0, 1, 'Eluru'),
+(13, 0, 1, 'Ongole'),
+(14, 0, 1, 'Nandyal'),
+(15, 0, 1, 'Machilipatnam'),
+(16, 0, 1, 'Adoni'),
+(17, 0, 1, 'Tenali'),
+(18, 0, 1, 'Chittoor'),
+(19, 0, 1, 'Hindupur'),
+(20, 0, 1, 'Proddatur'),
+(21, 0, 1, 'Bhimavaram'),
+(22, 0, 1, 'Madanapalle'),
+(23, 0, 1, 'Guntakal'),
+(24, 0, 1, 'Dharmavaram'),
+(25, 0, 1, 'Gudivada'),
+(26, 0, 1, 'Srikakulam'),
+(27, 0, 1, 'Narasaraopet'),
+(28, 0, 1, 'Rajampet'),
+(29, 0, 1, 'Tadpatri'),
+(30, 0, 1, 'Tadepalligudem'),
+(31, 0, 1, 'Chilakaluripet'),
+(32, 0, 1, 'Yemmiganur'),
+(33, 0, 1, 'Kadiri'),
+(34, 0, 1, 'Chirala'),
+(35, 0, 1, 'Anakapalle'),
+(36, 0, 1, 'Kavali'),
+(37, 0, 1, 'Palacole'),
+(38, 0, 1, 'Sullurpeta'),
+(39, 0, 1, 'Tanuku'),
+(40, 0, 1, 'Rayachoti'),
+(41, 0, 1, 'Srikalahasti'),
+(42, 0, 1, 'Bapatla'),
+(43, 0, 1, 'Naidupet'),
+(44, 0, 1, 'Nagari'),
+(45, 0, 1, 'Gudur'),
+(46, 0, 1, 'Vinukonda'),
+(47, 0, 1, 'Narasapuram'),
+(48, 0, 1, 'Nuzvid'),
+(49, 0, 1, 'Markapur'),
+(50, 0, 1, 'Ponnur'),
+(51, 0, 1, 'Kandukur'),
+(52, 0, 1, 'Bobbili'),
+(53, 0, 1, 'Rayadurg'),
+(54, 0, 1, 'Samalkot'),
+(55, 0, 1, 'Jaggaiahpet'),
+(56, 0, 1, 'Tuni'),
+(57, 0, 1, 'Amalapuram'),
+(58, 0, 1, 'Bheemunipatnam'),
+(59, 0, 1, 'Venkatagiri'),
+(60, 0, 1, 'Sattenapalle'),
+(61, 0, 1, 'Pithapuram'),
+(62, 0, 1, 'Palasa Kasibugga'),
+(63, 0, 1, 'Parvathipuram'),
+(64, 0, 1, 'Macherla'),
+(65, 0, 1, 'Gooty'),
+(66, 0, 1, 'Salur'),
+(67, 0, 1, 'Mandapeta'),
+(68, 0, 1, 'Jammalamadugu'),
+(69, 0, 1, 'Peddapuram'),
+(70, 0, 1, 'Punganur'),
+(71, 0, 1, 'Nidadavole'),
+(72, 0, 1, 'Repalle'),
+(73, 0, 1, 'Ramachandrapuram'),
+(74, 0, 1, 'Kovvur'),
+(75, 0, 1, 'Tiruvuru'),
+(76, 0, 1, 'Uravakonda'),
+(77, 0, 1, 'Narsipatnam'),
+(78, 0, 1, 'Yerraguntla'),
+(79, 0, 1, 'Pedana'),
+(80, 0, 1, 'Puttur'),
+(81, 0, 1, 'Renigunta'),
+(82, 0, 1, 'Rajam'),
+(83, 0, 1, 'Srisailam Project (Right Flank Colony) Township'),
+(84, 0, 2, 'Naharlagun'),
+(85, 0, 2, 'Pasighat'),
+(86, 0, 3, 'Guwahati'),
+(87, 0, 3, 'Silchar'),
+(88, 0, 3, 'Dibrugarh'),
+(89, 0, 3, 'Nagaon'),
+(90, 0, 3, 'Tinsukia'),
+(91, 0, 3, 'Jorhat'),
+(92, 0, 3, 'Bongaigaon City'),
+(93, 0, 3, 'Dhubri'),
+(94, 0, 3, 'Diphu'),
+(95, 0, 3, 'North Lakhimpur'),
+(96, 0, 3, 'Tezpur'),
+(97, 0, 3, 'Karimganj'),
+(98, 0, 3, 'Sibsagar'),
+(99, 0, 3, 'Goalpara'),
+(100, 0, 3, 'Barpeta'),
+(101, 0, 3, 'Lanka'),
+(102, 0, 3, 'Lumding'),
+(103, 0, 3, 'Mankachar'),
+(104, 0, 3, 'Nalbari'),
+(105, 0, 3, 'Rangia'),
+(106, 0, 3, 'Margherita'),
+(107, 0, 3, 'Mangaldoi'),
+(108, 0, 3, 'Silapathar'),
+(109, 0, 3, 'Mariani'),
+(110, 0, 3, 'Marigaon'),
+(111, 0, 4, 'Patna'),
+(112, 0, 4, 'Gaya'),
+(113, 0, 4, 'Bhagalpur'),
+(114, 0, 4, 'Muzaffarpur'),
+(115, 0, 4, 'Darbhanga'),
+(116, 0, 4, 'Arrah'),
+(117, 0, 4, 'Begusarai'),
+(118, 0, 4, 'Chhapra'),
+(119, 0, 4, 'Katihar'),
+(120, 0, 4, 'Munger'),
+(121, 0, 4, 'Purnia'),
+(122, 0, 4, 'Saharsa'),
+(123, 0, 4, 'Sasaram'),
+(124, 0, 4, 'Hajipur'),
+(125, 0, 4, 'Dehri-on-Sone'),
+(126, 0, 4, 'Bettiah'),
+(127, 0, 4, 'Motihari'),
+(128, 0, 4, 'Bagaha'),
+(129, 0, 4, 'Siwan'),
+(130, 0, 4, 'Kishanganj'),
+(131, 0, 4, 'Jamalpur'),
+(132, 0, 4, 'Buxar'),
+(133, 0, 4, 'Jehanabad'),
+(134, 0, 4, 'Aurangabad'),
+(135, 0, 4, 'Lakhisarai'),
+(136, 0, 4, 'Nawada'),
+(137, 0, 4, 'Jamui'),
+(138, 0, 4, 'Sitamarhi'),
+(139, 0, 4, 'Araria'),
+(140, 0, 4, 'Gopalganj'),
+(141, 0, 4, 'Madhubani'),
+(142, 0, 4, 'Masaurhi'),
+(143, 0, 4, 'Samastipur'),
+(144, 0, 4, 'Mokameh'),
+(145, 0, 4, 'Supaul'),
+(146, 0, 4, 'Dumraon'),
+(147, 0, 4, 'Arwal'),
+(148, 0, 4, 'Forbesganj'),
+(149, 0, 4, 'BhabUrban Agglomeration'),
+(150, 0, 4, 'Narkatiaganj'),
+(151, 0, 4, 'Naugachhia'),
+(152, 0, 4, 'Madhepura'),
+(153, 0, 4, 'Sheikhpura'),
+(154, 0, 4, 'Sultanganj'),
+(155, 0, 4, 'Raxaul Bazar'),
+(156, 0, 4, 'Ramnagar'),
+(157, 0, 4, 'Mahnar Bazar'),
+(158, 0, 4, 'Warisaliganj'),
+(159, 0, 4, 'Revelganj'),
+(160, 0, 4, 'Rajgir'),
+(161, 0, 4, 'Sonepur'),
+(162, 0, 4, 'Sherghati'),
+(163, 0, 4, 'Sugauli'),
+(164, 0, 4, 'Makhdumpur'),
+(165, 0, 4, 'Maner'),
+(166, 0, 4, 'Rosera'),
+(167, 0, 4, 'Nokha'),
+(168, 0, 4, 'Piro'),
+(169, 0, 4, 'Rafiganj'),
+(170, 0, 4, 'Marhaura'),
+(171, 0, 4, 'Mirganj'),
+(172, 0, 4, 'Lalganj'),
+(173, 0, 4, 'Murliganj'),
+(174, 0, 4, 'Motipur'),
+(175, 0, 4, 'Manihari'),
+(176, 0, 4, 'Sheohar'),
+(177, 0, 4, 'Maharajganj'),
+(178, 0, 4, 'Silao'),
+(179, 0, 4, 'Barh'),
+(180, 0, 4, 'Asarganj'),
+(181, 0, 5, 'Raipur'),
+(182, 0, 5, 'Bhilai Nagar'),
+(183, 0, 5, 'Korba'),
+(184, 0, 5, 'Bilaspur'),
+(185, 0, 5, 'Durg'),
+(186, 0, 5, 'Rajnandgaon'),
+(187, 0, 5, 'Jagdalpur'),
+(188, 0, 5, 'Raigarh'),
+(189, 0, 5, 'Ambikapur'),
+(190, 0, 5, 'Mahasamund'),
+(191, 0, 5, 'Dhamtari'),
+(192, 0, 5, 'Chirmiri'),
+(193, 0, 5, 'Bhatapara'),
+(194, 0, 5, 'Dalli-Rajhara'),
+(195, 0, 5, 'Naila Janjgir'),
+(196, 0, 5, 'Tilda Newra'),
+(197, 0, 5, 'Mungeli'),
+(198, 0, 5, 'Manendragarh'),
+(199, 0, 5, 'Sakti'),
+(200, 0, 6, 'Marmagao'),
+(201, 0, 6, 'Panaji'),
+(202, 0, 6, 'Margao'),
+(203, 0, 6, 'Mapusa'),
+(204, 0, 7, 'Ahmedabad'),
+(205, 0, 7, 'Surat'),
+(206, 0, 7, 'Vadodara'),
+(207, 0, 7, 'Rajkot'),
+(208, 0, 7, 'Bhavnagar'),
+(209, 0, 7, 'Jamnagar'),
+(210, 0, 7, 'Nadiad'),
+(211, 0, 7, 'Porbandar'),
+(212, 0, 7, 'Anand'),
+(213, 0, 7, 'Morvi'),
+(214, 0, 7, 'Mahesana'),
+(215, 0, 7, 'Bharuch'),
+(216, 0, 7, 'Vapi'),
+(217, 0, 7, 'Navsari'),
+(218, 0, 7, 'Veraval'),
+(219, 0, 7, 'Bhuj'),
+(220, 0, 7, 'Godhra'),
+(221, 0, 7, 'Palanpur'),
+(222, 0, 7, 'Valsad'),
+(223, 0, 7, 'Patan'),
+(224, 0, 7, 'Deesa'),
+(225, 0, 7, 'Amreli'),
+(226, 0, 7, 'Anjar'),
+(227, 0, 7, 'Dhoraji'),
+(228, 0, 7, 'Khambhat'),
+(229, 0, 7, 'Mahuva'),
+(230, 0, 7, 'Keshod'),
+(231, 0, 7, 'Wadhwan'),
+(232, 0, 7, 'Ankleshwar'),
+(233, 0, 7, 'Savarkundla'),
+(234, 0, 7, 'Kadi'),
+(235, 0, 7, 'Visnagar'),
+(236, 0, 7, 'Upleta'),
+(237, 0, 7, 'Una'),
+(238, 0, 7, 'Sidhpur'),
+(239, 0, 7, 'Unjha'),
+(240, 0, 7, 'Mangrol'),
+(241, 0, 7, 'Viramgam'),
+(242, 0, 7, 'Modasa'),
+(243, 0, 7, 'Palitana'),
+(244, 0, 7, 'Petlad'),
+(245, 0, 7, 'Kapadvanj'),
+(246, 0, 7, 'Sihor'),
+(247, 0, 7, 'Wankaner'),
+(248, 0, 7, 'Limbdi'),
+(249, 0, 7, 'Mandvi'),
+(250, 0, 7, 'Thangadh'),
+(251, 0, 7, 'Vyara'),
+(252, 0, 7, 'Padra'),
+(253, 0, 7, 'Lunawada'),
+(254, 0, 7, 'Rajpipla'),
+(255, 0, 7, 'Vapi'),
+(256, 0, 7, 'Umreth'),
+(257, 0, 7, 'Sanand'),
+(258, 0, 7, 'Rajula'),
+(259, 0, 7, 'Radhanpur'),
+(260, 0, 7, 'Mahemdabad'),
+(261, 0, 7, 'Ranavav'),
+(262, 0, 7, 'Tharad'),
+(263, 0, 7, 'Mansa'),
+(264, 0, 7, 'Umbergaon'),
+(265, 0, 7, 'Talaja'),
+(266, 0, 7, 'Vadnagar'),
+(267, 0, 7, 'Manavadar'),
+(268, 0, 7, 'Salaya'),
+(269, 0, 7, 'Vijapur'),
+(270, 0, 7, 'Pardi'),
+(271, 0, 7, 'Rapar'),
+(272, 0, 7, 'Songadh'),
+(273, 0, 7, 'Lathi'),
+(274, 0, 7, 'Adalaj'),
+(275, 0, 7, 'Chhapra'),
+(276, 0, 8, 'Faridabad'),
+(277, 0, 8, 'Gurgaon'),
+(278, 0, 8, 'Hisar'),
+(279, 0, 8, 'Rohtak'),
+(280, 0, 8, 'Panipat'),
+(281, 0, 8, 'Karnal'),
+(282, 0, 8, 'Sonipat'),
+(283, 0, 8, 'Yamunanagar'),
+(284, 0, 8, 'Panchkula'),
+(285, 0, 8, 'Bhiwani'),
+(286, 0, 8, 'Bahadurgarh'),
+(287, 0, 8, 'Jind'),
+(288, 0, 8, 'Sirsa'),
+(289, 0, 8, 'Thanesar'),
+(290, 0, 8, 'Kaithal'),
+(291, 0, 8, 'Palwal'),
+(292, 0, 8, 'Rewari'),
+(293, 0, 8, 'Hansi'),
+(294, 0, 8, 'Narnaul'),
+(295, 0, 8, 'Fatehabad'),
+(296, 0, 8, 'Gohana'),
+(297, 0, 8, 'Tohana'),
+(298, 0, 8, 'Narwana'),
+(299, 0, 8, 'Mandi Dabwali'),
+(300, 0, 8, 'Charkhi Dadri'),
+(301, 0, 8, 'Shahbad'),
+(302, 0, 8, 'Pehowa'),
+(303, 0, 8, 'Samalkha'),
+(304, 0, 8, 'Pinjore'),
+(305, 0, 8, 'Ladwa'),
+(306, 0, 8, 'Sohna'),
+(307, 0, 8, 'Safidon'),
+(308, 0, 8, 'Taraori'),
+(309, 0, 8, 'Mahendragarh'),
+(310, 0, 8, 'Ratia'),
+(311, 0, 8, 'Rania'),
+(312, 0, 8, 'Sarsod'),
+(314, 0, 9, 'Shimla'),
+(315, 0, 9, 'Mandi'),
+(316, 0, 9, 'Solan'),
+(317, 0, 9, 'Nahan'),
+(318, 0, 9, 'Sundarnagar'),
+(319, 0, 9, 'Palampur'),
+(320, 0, 10, 'Srinagar'),
+(321, 0, 10, 'Jammu'),
+(322, 0, 10, 'Baramula'),
+(323, 0, 10, 'Anantnag'),
+(324, 0, 10, 'Sopore'),
+(325, 0, 10, 'KathUrban Agglomeration'),
+(326, 0, 10, 'Rajauri'),
+(327, 0, 10, 'Punch'),
+(328, 0, 10, 'Udhampur'),
+(329, 0, 11, 'Dhanbad'),
+(330, 0, 11, 'Ranchi'),
+(331, 0, 11, 'Jamshedpur'),
+(332, 0, 11, 'Bokaro Steel City'),
+(333, 0, 11, 'Deoghar'),
+(334, 0, 11, 'Phusro'),
+(335, 0, 11, 'Adityapur'),
+(336, 0, 11, 'Hazaribag'),
+(337, 0, 11, 'Giridih'),
+(338, 0, 11, 'Ramgarh'),
+(339, 0, 11, 'Jhumri Tilaiya'),
+(340, 0, 11, 'Saunda'),
+(341, 0, 11, 'Sahibganj'),
+(342, 0, 11, 'Medininagar (Daltonganj)'),
+(343, 0, 11, 'Chaibasa'),
+(344, 0, 11, 'Chatra'),
+(345, 0, 11, 'Gumia'),
+(346, 0, 11, 'Dumka'),
+(347, 0, 11, 'Madhupur'),
+(348, 0, 11, 'Chirkunda'),
+(349, 0, 11, 'Pakaur'),
+(350, 0, 11, 'Simdega'),
+(351, 0, 11, 'Musabani'),
+(352, 0, 11, 'Mihijam'),
+(353, 0, 11, 'Patratu'),
+(354, 0, 11, 'Lohardaga'),
+(355, 0, 11, 'Tenu dam-cum-Kathhara'),
+(356, 0, 12, 'Bengaluru'),
+(357, 0, 12, 'Hubli-Dharwad'),
+(358, 0, 12, 'Belagavi'),
+(359, 0, 12, 'Mangaluru'),
+(360, 0, 12, 'Davanagere'),
+(361, 0, 12, 'Ballari'),
+(362, 0, 12, 'Tumkur'),
+(363, 0, 12, 'Shivamogga'),
+(364, 0, 12, 'Raayachuru'),
+(365, 0, 12, 'Robertson Pet'),
+(366, 0, 12, 'Kolar'),
+(367, 0, 12, 'Mandya'),
+(368, 0, 12, 'Udupi'),
+(369, 0, 12, 'Chikkamagaluru'),
+(370, 0, 12, 'Karwar'),
+(371, 0, 12, 'Ranebennuru'),
+(372, 0, 12, 'Ranibennur'),
+(373, 0, 12, 'Ramanagaram'),
+(374, 0, 12, 'Gokak'),
+(375, 0, 12, 'Yadgir'),
+(376, 0, 12, 'Rabkavi Banhatti'),
+(377, 0, 12, 'Shahabad'),
+(378, 0, 12, 'Sirsi'),
+(379, 0, 12, 'Sindhnur'),
+(380, 0, 12, 'Tiptur'),
+(381, 0, 12, 'Arsikere'),
+(382, 0, 12, 'Nanjangud'),
+(383, 0, 12, 'Sagara'),
+(384, 0, 12, 'Sira'),
+(385, 0, 12, 'Puttur'),
+(386, 0, 12, 'Athni'),
+(387, 0, 12, 'Mulbagal'),
+(388, 0, 12, 'Surapura'),
+(389, 0, 12, 'Siruguppa'),
+(390, 0, 12, 'Mudhol'),
+(391, 0, 12, 'Sidlaghatta'),
+(392, 0, 12, 'Shahpur'),
+(393, 0, 12, 'Saundatti-Yellamma'),
+(394, 0, 12, 'Wadi'),
+(395, 0, 12, 'Manvi'),
+(396, 0, 12, 'Nelamangala'),
+(397, 0, 12, 'Lakshmeshwar'),
+(398, 0, 12, 'Ramdurg'),
+(399, 0, 12, 'Nargund'),
+(400, 0, 12, 'Tarikere'),
+(401, 0, 12, 'Malavalli'),
+(402, 0, 12, 'Savanur'),
+(403, 0, 12, 'Lingsugur'),
+(404, 0, 12, 'Vijayapura'),
+(405, 0, 12, 'Sankeshwara'),
+(406, 0, 12, 'Madikeri'),
+(407, 0, 12, 'Talikota'),
+(408, 0, 12, 'Sedam'),
+(409, 0, 12, 'Shikaripur'),
+(410, 0, 12, 'Mahalingapura'),
+(411, 0, 12, 'Mudalagi'),
+(412, 0, 12, 'Muddebihal'),
+(413, 0, 12, 'Pavagada'),
+(414, 0, 12, 'Malur'),
+(415, 0, 12, 'Sindhagi'),
+(416, 0, 12, 'Sanduru'),
+(417, 0, 12, 'Afzalpur'),
+(418, 0, 12, 'Maddur'),
+(419, 0, 12, 'Madhugiri'),
+(420, 0, 12, 'Tekkalakote'),
+(421, 0, 12, 'Terdal'),
+(422, 0, 12, 'Mudabidri'),
+(423, 0, 12, 'Magadi'),
+(424, 0, 12, 'Navalgund'),
+(425, 0, 12, 'Shiggaon'),
+(426, 0, 12, 'Shrirangapattana'),
+(427, 0, 12, 'Sindagi'),
+(428, 0, 12, 'Sakaleshapura'),
+(429, 0, 12, 'Srinivaspur'),
+(430, 0, 12, 'Ron'),
+(431, 0, 12, 'Mundargi'),
+(432, 0, 12, 'Sadalagi'),
+(433, 0, 12, 'Piriyapatna'),
+(434, 0, 12, 'Adyar'),
+(435, 0, 12, 'Mysore'),
+(436, 0, 13, 'Thiruvananthapuram'),
+(437, 0, 13, 'Kochi'),
+(438, 0, 13, 'Kozhikode'),
+(439, 0, 13, 'Kollam'),
+(440, 0, 13, 'Thrissur'),
+(441, 0, 13, 'Palakkad'),
+(442, 0, 13, 'Alappuzha'),
+(443, 0, 13, 'Malappuram'),
+(444, 0, 13, 'Ponnani'),
+(445, 0, 13, 'Vatakara'),
+(446, 0, 13, 'Kanhangad'),
+(447, 0, 13, 'Taliparamba'),
+(448, 0, 13, 'Koyilandy'),
+(449, 0, 13, 'Neyyattinkara'),
+(450, 0, 13, 'Kayamkulam'),
+(451, 0, 13, 'Nedumangad'),
+(452, 0, 13, 'Kannur'),
+(453, 0, 13, 'Tirur'),
+(454, 0, 13, 'Kottayam'),
+(455, 0, 13, 'Kasaragod'),
+(456, 0, 13, 'Kunnamkulam'),
+(457, 0, 13, 'Ottappalam'),
+(458, 0, 13, 'Thiruvalla'),
+(459, 0, 13, 'Thodupuzha'),
+(460, 0, 13, 'Chalakudy'),
+(461, 0, 13, 'Changanassery'),
+(462, 0, 13, 'Punalur'),
+(463, 0, 13, 'Nilambur'),
+(464, 0, 13, 'Cherthala'),
+(465, 0, 13, 'Perinthalmanna'),
+(466, 0, 13, 'Mattannur'),
+(467, 0, 13, 'Shoranur'),
+(468, 0, 13, 'Varkala'),
+(469, 0, 13, 'Paravoor'),
+(470, 0, 13, 'Pathanamthitta'),
+(471, 0, 13, 'Peringathur'),
+(472, 0, 13, 'Attingal'),
+(473, 0, 13, 'Kodungallur'),
+(474, 0, 13, 'Pappinisseri'),
+(475, 0, 13, 'Chittur-Thathamangalam'),
+(476, 0, 13, 'Muvattupuzha'),
+(477, 0, 13, 'Adoor'),
+(478, 0, 13, 'Mavelikkara'),
+(479, 0, 13, 'Mavoor'),
+(480, 0, 13, 'Perumbavoor'),
+(481, 0, 13, 'Vaikom'),
+(482, 0, 13, 'Palai'),
+(483, 0, 13, 'Panniyannur'),
+(484, 0, 13, 'Guruvayoor'),
+(485, 0, 13, 'Puthuppally'),
+(486, 0, 13, 'Panamattom'),
+(487, 0, 14, 'Indore'),
+(488, 0, 14, 'Bhopal'),
+(489, 0, 14, 'Jabalpur'),
+(490, 0, 14, 'Gwalior'),
+(491, 0, 14, 'Ujjain'),
+(492, 0, 14, 'Sagar'),
+(493, 0, 14, 'Ratlam'),
+(494, 0, 14, 'Satna'),
+(495, 0, 14, 'Murwara (Katni)'),
+(496, 0, 14, 'Morena'),
+(497, 0, 14, 'Singrauli'),
+(498, 0, 14, 'Rewa'),
+(499, 0, 14, 'Vidisha'),
+(500, 0, 14, 'Ganjbasoda'),
+(501, 0, 14, 'Shivpuri'),
+(502, 0, 14, 'Mandsaur'),
+(503, 0, 14, 'Neemuch'),
+(504, 0, 14, 'Nagda'),
+(505, 0, 14, 'Itarsi'),
+(506, 0, 14, 'Sarni'),
+(507, 0, 14, 'Sehore'),
+(508, 0, 14, 'Mhow Cantonment'),
+(509, 0, 14, 'Seoni'),
+(510, 0, 14, 'Balaghat'),
+(511, 0, 14, 'Ashok Nagar'),
+(512, 0, 14, 'Tikamgarh'),
+(513, 0, 14, 'Shahdol'),
+(514, 0, 14, 'Pithampur'),
+(515, 0, 14, 'Alirajpur'),
+(516, 0, 14, 'Mandla'),
+(517, 0, 14, 'Sheopur'),
+(518, 0, 14, 'Shajapur'),
+(519, 0, 14, 'Panna'),
+(520, 0, 14, 'Raghogarh-Vijaypur'),
+(521, 0, 14, 'Sendhwa'),
+(522, 0, 14, 'Sidhi'),
+(523, 0, 14, 'Pipariya'),
+(524, 0, 14, 'Shujalpur'),
+(525, 0, 14, 'Sironj'),
+(526, 0, 14, 'Pandhurna'),
+(527, 0, 14, 'Nowgong'),
+(528, 0, 14, 'Mandideep'),
+(529, 0, 14, 'Sihora'),
+(530, 0, 14, 'Raisen'),
+(531, 0, 14, 'Lahar'),
+(532, 0, 14, 'Maihar'),
+(533, 0, 14, 'Sanawad'),
+(534, 0, 14, 'Sabalgarh'),
+(535, 0, 14, 'Umaria'),
+(536, 0, 14, 'Porsa'),
+(537, 0, 14, 'Narsinghgarh'),
+(538, 0, 14, 'Malaj Khand'),
+(539, 0, 14, 'Sarangpur'),
+(540, 0, 14, 'Mundi'),
+(541, 0, 14, 'Nepanagar'),
+(542, 0, 14, 'Pasan'),
+(543, 0, 14, 'Mahidpur'),
+(544, 0, 14, 'Seoni-Malwa'),
+(545, 0, 14, 'Rehli'),
+(546, 0, 14, 'Manawar'),
+(547, 0, 14, 'Rahatgarh'),
+(548, 0, 14, 'Panagar'),
+(549, 0, 14, 'Wara Seoni'),
+(550, 0, 14, 'Tarana'),
+(551, 0, 14, 'Sausar'),
+(552, 0, 14, 'Rajgarh'),
+(553, 0, 14, 'Niwari'),
+(554, 0, 14, 'Mauganj'),
+(555, 0, 14, 'Manasa'),
+(556, 0, 14, 'Nainpur'),
+(557, 0, 14, 'Prithvipur'),
+(558, 0, 14, 'Sohagpur'),
+(559, 0, 14, 'Nowrozabad (Khodargama)'),
+(560, 0, 14, 'Shamgarh'),
+(561, 0, 14, 'Maharajpur'),
+(562, 0, 14, 'Multai'),
+(563, 0, 14, 'Pali'),
+(564, 0, 14, 'Pachore'),
+(565, 0, 14, 'Rau'),
+(566, 0, 14, 'Mhowgaon'),
+(567, 0, 14, 'Vijaypur'),
+(568, 0, 14, 'Narsinghgarh'),
+(569, 0, 15, 'Mumbai'),
+(570, 0, 15, 'Pune'),
+(571, 0, 15, 'Nagpur'),
+(572, 0, 15, 'Thane'),
+(573, 0, 15, 'Nashik'),
+(574, 0, 15, 'Kalyan-Dombivali'),
+(575, 0, 15, 'Vasai-Virar'),
+(576, 0, 15, 'Solapur'),
+(577, 0, 15, 'Mira-Bhayandar'),
+(578, 0, 15, 'Bhiwandi'),
+(579, 0, 15, 'Amravati'),
+(580, 0, 15, 'Nanded-Waghala'),
+(581, 0, 15, 'Sangli'),
+(582, 0, 15, 'Malegaon'),
+(583, 0, 15, 'Akola'),
+(584, 0, 15, 'Latur'),
+(585, 0, 15, 'Dhule'),
+(586, 0, 15, 'Ahmednagar'),
+(587, 0, 15, 'Ichalkaranji'),
+(588, 0, 15, 'Parbhani'),
+(589, 0, 15, 'Panvel'),
+(590, 0, 15, 'Yavatmal'),
+(591, 0, 15, 'Achalpur'),
+(592, 0, 15, 'Osmanabad'),
+(593, 0, 15, 'Nandurbar'),
+(594, 0, 15, 'Satara'),
+(595, 0, 15, 'Wardha'),
+(596, 0, 15, 'Udgir'),
+(597, 0, 15, 'Aurangabad'),
+(598, 0, 15, 'Amalner'),
+(599, 0, 15, 'Akot'),
+(600, 0, 15, 'Pandharpur'),
+(601, 0, 15, 'Shrirampur'),
+(602, 0, 15, 'Parli'),
+(603, 0, 15, 'Washim'),
+(604, 0, 15, 'Ambejogai'),
+(605, 0, 15, 'Manmad'),
+(606, 0, 15, 'Ratnagiri'),
+(607, 0, 15, 'Uran Islampur'),
+(608, 0, 15, 'Pusad'),
+(609, 0, 15, 'Sangamner'),
+(610, 0, 15, 'Shirpur-Warwade'),
+(611, 0, 15, 'Malkapur'),
+(612, 0, 15, 'Wani'),
+(613, 0, 15, 'Lonavla'),
+(614, 0, 15, 'Talegaon Dabhade'),
+(615, 0, 15, 'Anjangaon'),
+(616, 0, 15, 'Umred'),
+(617, 0, 15, 'Palghar'),
+(618, 0, 15, 'Shegaon'),
+(619, 0, 15, 'Ozar'),
+(620, 0, 15, 'Phaltan'),
+(621, 0, 15, 'Yevla'),
+(622, 0, 15, 'Shahade'),
+(623, 0, 15, 'Vita'),
+(624, 0, 15, 'Umarkhed'),
+(625, 0, 15, 'Warora'),
+(626, 0, 15, 'Pachora'),
+(627, 0, 15, 'Tumsar'),
+(628, 0, 15, 'Manjlegaon'),
+(629, 0, 15, 'Sillod'),
+(630, 0, 15, 'Arvi'),
+(631, 0, 15, 'Nandura'),
+(632, 0, 15, 'Vaijapur'),
+(633, 0, 15, 'Wadgaon Road'),
+(634, 0, 15, 'Sailu'),
+(635, 0, 15, 'Murtijapur'),
+(636, 0, 15, 'Tasgaon'),
+(637, 0, 15, 'Mehkar'),
+(638, 0, 15, 'Yawal'),
+(639, 0, 15, 'Pulgaon'),
+(640, 0, 15, 'Nilanga'),
+(641, 0, 15, 'Wai'),
+(642, 0, 15, 'Umarga'),
+(643, 0, 15, 'Paithan'),
+(644, 0, 15, 'Rahuri'),
+(645, 0, 15, 'Nawapur'),
+(646, 0, 15, 'Tuljapur'),
+(647, 0, 15, 'Morshi'),
+(648, 0, 15, 'Purna'),
+(649, 0, 15, 'Satana'),
+(650, 0, 15, 'Pathri'),
+(651, 0, 15, 'Sinnar'),
+(652, 0, 15, 'Uchgaon'),
+(653, 0, 15, 'Uran'),
+(654, 0, 15, 'Pen'),
+(655, 0, 15, 'Karjat'),
+(656, 0, 15, 'Manwath'),
+(657, 0, 15, 'Partur'),
+(658, 0, 15, 'Sangole'),
+(659, 0, 15, 'Mangrulpir'),
+(660, 0, 15, 'Risod'),
+(661, 0, 15, 'Shirur'),
+(662, 0, 15, 'Savner'),
+(663, 0, 15, 'Sasvad'),
+(664, 0, 15, 'Pandharkaoda'),
+(665, 0, 15, 'Talode'),
+(666, 0, 15, 'Shrigonda'),
+(667, 0, 15, 'Shirdi'),
+(668, 0, 15, 'Raver'),
+(669, 0, 15, 'Mukhed'),
+(670, 0, 15, 'Rajura'),
+(671, 0, 15, 'Vadgaon Kasba'),
+(672, 0, 15, 'Tirora'),
+(673, 0, 15, 'Mahad'),
+(674, 0, 15, 'Lonar'),
+(675, 0, 15, 'Sawantwadi'),
+(676, 0, 15, 'Pathardi'),
+(677, 0, 15, 'Pauni'),
+(678, 0, 15, 'Ramtek'),
+(679, 0, 15, 'Mul'),
+(680, 0, 15, 'Soyagaon'),
+(681, 0, 15, 'Mangalvedhe'),
+(682, 0, 15, 'Narkhed'),
+(683, 0, 15, 'Shendurjana'),
+(684, 0, 15, 'Patur'),
+(685, 0, 15, 'Mhaswad'),
+(686, 0, 15, 'Loha'),
+(687, 0, 15, 'Nandgaon'),
+(688, 0, 15, 'Warud'),
+(689, 0, 16, 'Imphal'),
+(690, 0, 16, 'Thoubal'),
+(691, 0, 16, 'Lilong'),
+(692, 0, 16, 'Mayang Imphal'),
+(693, 0, 17, 'Shillong'),
+(694, 0, 17, 'Tura'),
+(695, 0, 17, 'Nongstoin'),
+(696, 0, 18, 'Aizawl'),
+(697, 0, 18, 'Lunglei'),
+(698, 0, 18, 'Saiha'),
+(699, 0, 19, 'Dimapur'),
+(700, 0, 19, 'Kohima'),
+(701, 0, 19, 'Zunheboto'),
+(702, 0, 19, 'Tuensang'),
+(703, 0, 19, 'Wokha'),
+(704, 0, 19, 'Mokokchung'),
+(705, 0, 20, 'Bhubaneswar'),
+(706, 0, 20, 'Cuttack'),
+(707, 0, 20, 'Raurkela'),
+(708, 0, 20, 'Brahmapur'),
+(709, 0, 20, 'Sambalpur'),
+(710, 0, 20, 'Puri'),
+(711, 0, 20, 'Baleshwar Town'),
+(712, 0, 20, 'Baripada Town'),
+(713, 0, 20, 'Bhadrak'),
+(714, 0, 20, 'Balangir'),
+(715, 0, 20, 'Jharsuguda'),
+(716, 0, 20, 'Bargarh'),
+(717, 0, 20, 'Paradip'),
+(718, 0, 20, 'Bhawanipatna'),
+(719, 0, 20, 'Dhenkanal'),
+(720, 0, 20, 'Barbil'),
+(721, 0, 20, 'Kendujhar'),
+(722, 0, 20, 'Sunabeda'),
+(723, 0, 20, 'Rayagada'),
+(724, 0, 20, 'Jatani'),
+(725, 0, 20, 'Byasanagar'),
+(726, 0, 20, 'Kendrapara'),
+(727, 0, 20, 'Rajagangapur'),
+(728, 0, 20, 'Parlakhemundi'),
+(729, 0, 20, 'Talcher'),
+(730, 0, 20, 'Sundargarh'),
+(731, 0, 20, 'Phulabani'),
+(732, 0, 20, 'Pattamundai'),
+(733, 0, 20, 'Titlagarh'),
+(734, 0, 20, 'Nabarangapur'),
+(735, 0, 20, 'Soro'),
+(736, 0, 20, 'Malkangiri'),
+(737, 0, 20, 'Rairangpur'),
+(738, 0, 20, 'Tarbha'),
+(739, 0, 21, 'Ludhiana'),
+(740, 0, 21, 'Patiala'),
+(741, 0, 21, 'Amritsar'),
+(742, 0, 21, 'Jalandhar'),
+(743, 0, 21, 'Bathinda'),
+(744, 0, 21, 'Pathankot'),
+(745, 0, 21, 'Hoshiarpur'),
+(746, 0, 21, 'Batala'),
+(747, 0, 21, 'Moga'),
+(748, 0, 21, 'Malerkotla'),
+(749, 0, 21, 'Khanna'),
+(750, 0, 21, 'Mohali'),
+(751, 0, 21, 'Barnala'),
+(752, 0, 21, 'Firozpur'),
+(753, 0, 21, 'Phagwara'),
+(754, 0, 21, 'Kapurthala'),
+(755, 0, 21, 'Zirakpur'),
+(756, 0, 21, 'Kot Kapura'),
+(757, 0, 21, 'Faridkot'),
+(758, 0, 21, 'Muktsar'),
+(759, 0, 21, 'Rajpura'),
+(760, 0, 21, 'Sangrur'),
+(761, 0, 21, 'Fazilka'),
+(762, 0, 21, 'Gurdaspur'),
+(763, 0, 21, 'Kharar'),
+(764, 0, 21, 'Gobindgarh'),
+(765, 0, 21, 'Mansa'),
+(766, 0, 21, 'Malout'),
+(767, 0, 21, 'Nabha'),
+(768, 0, 21, 'Tarn Taran'),
+(769, 0, 21, 'Jagraon'),
+(770, 0, 21, 'Sunam'),
+(771, 0, 21, 'Dhuri'),
+(772, 0, 21, 'Firozpur Cantt.'),
+(773, 0, 21, 'Sirhind Fatehgarh Sahib'),
+(774, 0, 21, 'Rupnagar'),
+(775, 0, 21, 'Jalandhar Cantt.'),
+(776, 0, 21, 'Samana'),
+(777, 0, 21, 'Nawanshahr'),
+(778, 0, 21, 'Rampura Phul'),
+(779, 0, 21, 'Nangal'),
+(780, 0, 21, 'Nakodar'),
+(781, 0, 21, 'Zira'),
+(782, 0, 21, 'Patti'),
+(783, 0, 21, 'Raikot'),
+(784, 0, 21, 'Longowal'),
+(785, 0, 21, 'Urmar Tanda'),
+(786, 0, 21, 'Morinda, India'),
+(787, 0, 21, 'Phillaur'),
+(788, 0, 21, 'Pattran'),
+(789, 0, 21, 'Qadian'),
+(790, 0, 21, 'Sujanpur'),
+(791, 0, 21, 'Mukerian'),
+(792, 0, 21, 'Talwara'),
+(793, 0, 22, 'Jaipur'),
+(794, 0, 22, 'Jodhpur'),
+(795, 0, 22, 'Bikaner'),
+(796, 0, 22, 'Udaipur'),
+(797, 0, 22, 'Ajmer'),
+(798, 0, 22, 'Bhilwara'),
+(799, 0, 22, 'Alwar'),
+(800, 0, 22, 'Bharatpur'),
+(801, 0, 22, 'Pali'),
+(802, 0, 22, 'Barmer'),
+(803, 0, 22, 'Sikar'),
+(804, 0, 22, 'Tonk'),
+(805, 0, 22, 'Sadulpur'),
+(806, 0, 22, 'Sawai Madhopur'),
+(807, 0, 22, 'Nagaur'),
+(808, 0, 22, 'Makrana'),
+(809, 0, 22, 'Sujangarh'),
+(810, 0, 22, 'Sardarshahar'),
+(811, 0, 22, 'Ladnu'),
+(812, 0, 22, 'Ratangarh'),
+(813, 0, 22, 'Nokha'),
+(814, 0, 22, 'Nimbahera'),
+(815, 0, 22, 'Suratgarh'),
+(816, 0, 22, 'Rajsamand'),
+(817, 0, 22, 'Lachhmangarh'),
+(818, 0, 22, 'Rajgarh (Churu)'),
+(819, 0, 22, 'Nasirabad'),
+(820, 0, 22, 'Nohar'),
+(821, 0, 22, 'Phalodi'),
+(822, 0, 22, 'Nathdwara'),
+(823, 0, 22, 'Pilani'),
+(824, 0, 22, 'Merta City'),
+(825, 0, 22, 'Sojat'),
+(826, 0, 22, 'Neem-Ka-Thana'),
+(827, 0, 22, 'Sirohi'),
+(828, 0, 22, 'Pratapgarh'),
+(829, 0, 22, 'Rawatbhata'),
+(830, 0, 22, 'Sangaria'),
+(831, 0, 22, 'Lalsot'),
+(832, 0, 22, 'Pilibanga'),
+(833, 0, 22, 'Pipar City'),
+(834, 0, 22, 'Taranagar'),
+(835, 0, 22, 'Vijainagar, Ajmer'),
+(836, 0, 22, 'Sumerpur'),
+(837, 0, 22, 'Sagwara'),
+(838, 0, 22, 'Ramganj Mandi'),
+(839, 0, 22, 'Lakheri'),
+(840, 0, 22, 'Udaipurwati'),
+(841, 0, 22, 'Losal'),
+(842, 0, 22, 'Sri Madhopur'),
+(843, 0, 22, 'Ramngarh'),
+(844, 0, 22, 'Rawatsar'),
+(845, 0, 22, 'Rajakhera'),
+(846, 0, 22, 'Shahpura'),
+(847, 0, 22, 'Shahpura'),
+(848, 0, 22, 'Raisinghnagar'),
+(849, 0, 22, 'Malpura'),
+(850, 0, 22, 'Nadbai'),
+(851, 0, 22, 'Sanchore'),
+(852, 0, 22, 'Nagar'),
+(853, 0, 22, 'Rajgarh (Alwar)'),
+(854, 0, 22, 'Sheoganj'),
+(855, 0, 22, 'Sadri'),
+(856, 0, 22, 'Todaraisingh'),
+(857, 0, 22, 'Todabhim'),
+(858, 0, 22, 'Reengus'),
+(859, 0, 22, 'Rajaldesar'),
+(860, 0, 22, 'Sadulshahar'),
+(861, 0, 22, 'Sambhar'),
+(862, 0, 22, 'Prantij'),
+(863, 0, 22, 'Mount Abu'),
+(864, 0, 22, 'Mangrol'),
+(865, 0, 22, 'Phulera'),
+(866, 0, 22, 'Mandawa'),
+(867, 0, 22, 'Pindwara'),
+(868, 0, 22, 'Mandalgarh'),
+(869, 0, 22, 'Takhatgarh'),
+(870, 0, 23, 'Barmiak'),
+(871, 0, 23, 'Be'),
+(872, 0, 23, 'Bhurtuk'),
+(873, 0, 23, 'Chhubakha'),
+(874, 0, 23, 'Chidam'),
+(875, 0, 23, 'Chubha'),
+(876, 0, 23, 'Chumikteng'),
+(877, 0, 23, 'Dentam'),
+(878, 0, 23, 'Dikchu'),
+(879, 0, 23, 'Dzongri'),
+(880, 0, 23, 'Gangtok'),
+(881, 0, 23, 'Gauzing'),
+(882, 0, 23, 'Gyalshing'),
+(883, 0, 23, 'Hema'),
+(884, 0, 23, 'Kerung'),
+(885, 0, 23, 'Lachen'),
+(886, 0, 23, 'Lachung'),
+(887, 0, 23, ' Lema'),
+(888, 0, 23, 'Lingtam'),
+(889, 0, 23, 'Lungthu'),
+(890, 0, 23, 'Mangan'),
+(891, 0, 23, 'Namchi'),
+(892, 0, 23, 'Namthang'),
+(893, 0, 23, 'Nanga'),
+(894, 0, 23, 'Nantang'),
+(895, 0, 23, 'Naya Bazar'),
+(896, 0, 23, 'Padamachen'),
+(897, 0, 23, 'Pakhyong'),
+(898, 0, 23, 'Pemayangtse'),
+(899, 0, 23, 'Phensang'),
+(900, 0, 23, 'Rangli'),
+(901, 0, 23, ' Rinchingpong'),
+(902, 0, 23, 'Sakyong'),
+(903, 0, 23, 'Samdong'),
+(904, 0, 23, 'Singtam'),
+(905, 0, 23, 'Siniolchu'),
+(906, 0, 23, ' Sombari'),
+(907, 0, 23, 'Soreng'),
+(908, 0, 23, 'Sosing'),
+(909, 0, 23, 'Tekhug'),
+(910, 0, 23, 'Temi'),
+(911, 0, 23, 'Tsetang'),
+(912, 0, 23, 'Tsomgo'),
+(913, 0, 23, 'Tumlong'),
+(914, 0, 23, 'Yangang'),
+(915, 0, 23, 'Yumtang'),
+(916, 0, 24, 'Chennai'),
+(917, 0, 24, 'Coimbatore'),
+(918, 0, 24, 'Madurai'),
+(919, 0, 24, 'Tiruchirappalli'),
+(920, 0, 24, 'Salem'),
+(921, 0, 24, 'Tirunelveli'),
+(922, 0, 24, 'Tiruppur'),
+(923, 0, 24, 'Ranipet'),
+(924, 0, 24, 'Nagercoil'),
+(925, 0, 24, 'Thanjavur'),
+(926, 0, 24, 'Vellore'),
+(927, 0, 24, 'Kancheepuram'),
+(928, 0, 24, 'Erode'),
+(929, 0, 24, 'Tiruvannamalai'),
+(930, 0, 24, 'Pollachi'),
+(931, 0, 24, 'Rajapalayam'),
+(932, 0, 24, 'Sivakasi'),
+(933, 0, 24, 'Pudukkottai'),
+(934, 0, 24, 'Neyveli (TS)'),
+(935, 0, 24, 'Nagapattinam'),
+(936, 0, 24, 'Viluppuram'),
+(937, 0, 24, 'Tiruchengode'),
+(938, 0, 24, 'Vaniyambadi'),
+(939, 0, 24, 'Theni Allinagaram'),
+(940, 0, 24, 'Udhagamandalam'),
+(941, 0, 24, 'Aruppukkottai'),
+(942, 0, 24, 'Paramakudi'),
+(943, 0, 24, 'Arakkonam'),
+(944, 0, 24, 'Virudhachalam'),
+(945, 0, 24, 'Srivilliputhur'),
+(946, 0, 24, 'Tindivanam'),
+(947, 0, 24, 'Virudhunagar'),
+(948, 0, 24, 'Karur'),
+(949, 0, 24, 'Valparai'),
+(950, 0, 24, 'Sankarankovil'),
+(951, 0, 24, 'Tenkasi'),
+(952, 0, 24, 'Palani'),
+(953, 0, 24, 'Pattukkottai'),
+(954, 0, 24, 'Tirupathur'),
+(955, 0, 24, 'Ramanathapuram'),
+(956, 0, 24, 'Udumalaipettai'),
+(957, 0, 24, 'Gobichettipalayam'),
+(958, 0, 24, 'Thiruvarur'),
+(959, 0, 24, 'Thiruvallur'),
+(960, 0, 24, 'Panruti'),
+(961, 0, 24, 'Namakkal'),
+(962, 0, 24, 'Thirumangalam'),
+(963, 0, 24, 'Vikramasingapuram'),
+(964, 0, 24, 'Nellikuppam'),
+(965, 0, 24, 'Rasipuram'),
+(966, 0, 24, 'Tiruttani'),
+(967, 0, 24, 'Nandivaram-Guduvancheri'),
+(968, 0, 24, 'Periyakulam'),
+(969, 0, 24, 'Pernampattu'),
+(970, 0, 24, 'Vellakoil'),
+(971, 0, 24, 'Sivaganga'),
+(972, 0, 24, 'Vadalur'),
+(973, 0, 24, 'Rameshwaram'),
+(974, 0, 24, 'Tiruvethipuram'),
+(975, 0, 24, 'Perambalur'),
+(976, 0, 24, 'Usilampatti'),
+(977, 0, 24, 'Vedaranyam'),
+(978, 0, 24, 'Sathyamangalam'),
+(979, 0, 24, 'Puliyankudi'),
+(980, 0, 24, 'Nanjikottai'),
+(981, 0, 24, 'Thuraiyur'),
+(982, 0, 24, 'Sirkali'),
+(983, 0, 24, 'Tiruchendur'),
+(984, 0, 24, 'Periyasemur'),
+(985, 0, 24, 'Sattur'),
+(986, 0, 24, 'Vandavasi'),
+(987, 0, 24, 'Tharamangalam'),
+(988, 0, 24, 'Tirukkoyilur'),
+(989, 0, 24, 'Oddanchatram'),
+(990, 0, 24, 'Palladam'),
+(991, 0, 24, 'Vadakkuvalliyur'),
+(992, 0, 24, 'Tirukalukundram'),
+(993, 0, 24, 'Uthamapalayam'),
+(994, 0, 24, 'Surandai'),
+(995, 0, 24, 'Sankari'),
+(996, 0, 24, 'Shenkottai'),
+(997, 0, 24, 'Vadipatti'),
+(998, 0, 24, 'Sholingur'),
+(999, 0, 24, 'Tirupathur'),
+(1000, 0, 24, 'Manachanallur'),
+(1001, 0, 24, 'Viswanatham'),
+(1002, 0, 24, 'Polur'),
+(1003, 0, 24, 'Panagudi'),
+(1004, 0, 24, 'Uthiramerur'),
+(1005, 0, 24, 'Thiruthuraipoondi'),
+(1006, 0, 24, 'Pallapatti'),
+(1007, 0, 24, 'Ponneri'),
+(1008, 0, 24, 'Lalgudi'),
+(1009, 0, 24, 'Natham'),
+(1010, 0, 24, 'Unnamalaikadai'),
+(1011, 0, 24, 'P.N.Patti'),
+(1012, 0, 24, 'Tharangambadi'),
+(1013, 0, 24, 'Tittakudi'),
+(1014, 0, 24, 'Pacode'),
+(1015, 0, 24, 'O'' Valley'),
+(1016, 0, 24, 'Suriyampalayam'),
+(1017, 0, 24, 'Sholavandan'),
+(1018, 0, 24, 'Thammampatti'),
+(1019, 0, 24, 'Namagiripettai'),
+(1020, 0, 24, 'Peravurani'),
+(1021, 0, 24, 'Parangipettai'),
+(1022, 0, 24, 'Pudupattinam'),
+(1023, 0, 24, 'Pallikonda'),
+(1024, 0, 24, 'Sivagiri'),
+(1025, 0, 24, 'Punjaipugalur'),
+(1026, 0, 24, 'Padmanabhapuram'),
+(1027, 0, 24, 'Thirupuvanam'),
+(1028, 0, 25, 'Agartala'),
+(1029, 0, 25, 'Udaipur'),
+(1030, 0, 25, 'Dharmanagar'),
+(1031, 0, 25, 'Pratapgarh'),
+(1032, 0, 25, 'Kailasahar'),
+(1033, 0, 25, 'Belonia'),
+(1034, 0, 25, 'Khowai'),
+(1035, 0, 26, 'Lucknow'),
+(1036, 0, 26, 'Kanpur'),
+(1037, 0, 26, 'Firozabad'),
+(1038, 0, 26, 'Agra'),
+(1039, 0, 26, 'Meerut'),
+(1040, 0, 26, 'Varanasi'),
+(1041, 0, 26, 'Allahabad'),
+(1042, 0, 26, 'Amroha'),
+(1043, 0, 26, 'Moradabad'),
+(1044, 0, 26, 'Aligarh'),
+(1045, 0, 26, 'Saharanpur'),
+(1046, 0, 26, 'Noida'),
+(1047, 0, 26, 'Loni'),
+(1048, 0, 26, 'Jhansi'),
+(1049, 0, 26, 'Shahjahanpur'),
+(1050, 0, 26, 'Rampur'),
+(1051, 0, 26, 'Modinagar'),
+(1052, 0, 26, 'Hapur'),
+(1053, 0, 26, 'Etawah'),
+(1054, 0, 26, 'Sambhal'),
+(1055, 0, 26, 'Orai'),
+(1056, 0, 26, 'Bahraich'),
+(1057, 0, 26, 'Unnao'),
+(1058, 0, 26, 'Rae Bareli'),
+(1059, 0, 26, 'Lakhimpur'),
+(1060, 0, 26, 'Sitapur'),
+(1061, 0, 26, 'Lalitpur'),
+(1062, 0, 26, 'Pilibhit'),
+(1063, 0, 26, 'Chandausi'),
+(1064, 0, 26, 'Hardoi '),
+(1065, 0, 26, 'Azamgarh'),
+(1066, 0, 26, 'Khair'),
+(1067, 0, 26, 'Sultanpur'),
+(1068, 0, 26, 'Tanda'),
+(1069, 0, 26, 'Nagina'),
+(1070, 0, 26, 'Shamli'),
+(1071, 0, 26, 'Najibabad'),
+(1072, 0, 26, 'Shikohabad'),
+(1073, 0, 26, 'Sikandrabad'),
+(1074, 0, 26, 'Shahabad, Hardoi'),
+(1075, 0, 26, 'Pilkhuwa'),
+(1076, 0, 26, 'Renukoot'),
+(1077, 0, 26, 'Vrindavan'),
+(1078, 0, 26, 'Ujhani'),
+(1079, 0, 26, 'Laharpur'),
+(1080, 0, 26, 'Tilhar'),
+(1081, 0, 26, 'Sahaswan'),
+(1082, 0, 26, 'Rath'),
+(1083, 0, 26, 'Sherkot'),
+(1084, 0, 26, 'Kalpi'),
+(1085, 0, 26, 'Tundla'),
+(1086, 0, 26, 'Sandila'),
+(1087, 0, 26, 'Nanpara'),
+(1088, 0, 26, 'Sardhana'),
+(1089, 0, 26, 'Nehtaur'),
+(1090, 0, 26, 'Seohara'),
+(1091, 0, 26, 'Padrauna'),
+(1092, 0, 26, 'Mathura'),
+(1093, 0, 26, 'Thakurdwara'),
+(1094, 0, 26, 'Nawabganj'),
+(1095, 0, 26, 'Siana'),
+(1096, 0, 26, 'Noorpur'),
+(1097, 0, 26, 'Sikandra Rao'),
+(1098, 0, 26, 'Puranpur'),
+(1099, 0, 26, 'Rudauli'),
+(1100, 0, 26, 'Thana Bhawan'),
+(1101, 0, 26, 'Palia Kalan'),
+(1102, 0, 26, 'Zaidpur'),
+(1103, 0, 26, 'Nautanwa'),
+(1104, 0, 26, 'Zamania'),
+(1105, 0, 26, 'Shikarpur, Bulandshahr'),
+(1106, 0, 26, 'Naugawan Sadat'),
+(1107, 0, 26, 'Fatehpur Sikri'),
+(1108, 0, 26, 'Shahabad, Rampur'),
+(1109, 0, 26, 'Robertsganj'),
+(1110, 0, 26, 'Utraula'),
+(1111, 0, 26, 'Sadabad'),
+(1112, 0, 26, 'Rasra'),
+(1113, 0, 26, 'Lar'),
+(1114, 0, 26, 'Lal Gopalganj Nindaura'),
+(1115, 0, 26, 'Sirsaganj'),
+(1116, 0, 26, 'Pihani'),
+(1117, 0, 26, 'Shamsabad, Agra'),
+(1118, 0, 26, 'Rudrapur'),
+(1119, 0, 26, 'Soron'),
+(1120, 0, 26, 'SUrban Agglomerationr'),
+(1121, 0, 26, 'Samdhan'),
+(1122, 0, 26, 'Sahjanwa'),
+(1123, 0, 26, 'Rampur Maniharan'),
+(1124, 0, 26, 'Sumerpur'),
+(1125, 0, 26, 'Shahganj'),
+(1126, 0, 26, 'Tulsipur'),
+(1127, 0, 26, 'Tirwaganj'),
+(1128, 0, 26, 'PurqUrban Agglomerationzi'),
+(1129, 0, 26, 'Shamsabad, Farrukhabad'),
+(1130, 0, 26, 'Warhapur'),
+(1131, 0, 26, 'Powayan'),
+(1132, 0, 26, 'Sandi'),
+(1133, 0, 26, 'Achhnera'),
+(1134, 0, 26, 'Naraura'),
+(1135, 0, 26, 'Nakur'),
+(1136, 0, 26, 'Sahaspur'),
+(1137, 0, 26, 'Safipur'),
+(1138, 0, 26, 'Reoti'),
+(1139, 0, 26, 'Sikanderpur'),
+(1140, 0, 26, 'Saidpur'),
+(1141, 0, 26, 'Sirsi'),
+(1142, 0, 26, 'Purwa'),
+(1143, 0, 26, 'Parasi'),
+(1144, 0, 26, 'Lalganj'),
+(1145, 0, 26, 'Phulpur'),
+(1146, 0, 26, 'Shishgarh'),
+(1147, 0, 26, 'Sahawar'),
+(1148, 0, 26, 'Samthar'),
+(1149, 0, 26, 'Pukhrayan'),
+(1150, 0, 26, 'Obra'),
+(1151, 0, 26, 'Niwai'),
+(1152, 0, 27, 'Dehradun'),
+(1153, 0, 27, 'Hardwar'),
+(1154, 0, 27, 'Haldwani-cum-Kathgodam'),
+(1155, 0, 27, 'Srinagar'),
+(1156, 0, 27, 'Kashipur'),
+(1157, 0, 27, 'Roorkee'),
+(1158, 0, 27, 'Rudrapur'),
+(1159, 0, 27, 'Rishikesh'),
+(1160, 0, 27, 'Ramnagar'),
+(1161, 0, 27, 'Pithoragarh'),
+(1162, 0, 27, 'Manglaur'),
+(1163, 0, 27, 'Nainital'),
+(1164, 0, 27, 'Mussoorie'),
+(1165, 0, 27, 'Tehri'),
+(1166, 0, 27, 'Pauri'),
+(1167, 0, 27, 'Nagla'),
+(1168, 0, 27, 'Sitarganj'),
+(1169, 0, 27, 'Bageshwar'),
+(1170, 0, 28, 'Kolkata'),
+(1171, 0, 28, 'Siliguri'),
+(1172, 0, 28, 'Asansol'),
+(1173, 0, 28, 'Raghunathganj'),
+(1174, 0, 28, 'Kharagpur'),
+(1175, 0, 28, 'Naihati'),
+(1176, 0, 28, 'English Bazar'),
+(1177, 0, 28, 'Baharampur'),
+(1178, 0, 28, 'Hugli-Chinsurah'),
+(1179, 0, 28, 'Raiganj'),
+(1180, 0, 28, 'Jalpaiguri'),
+(1181, 0, 28, 'Santipur'),
+(1182, 0, 28, 'Balurghat'),
+(1183, 0, 28, 'Medinipur'),
+(1184, 0, 28, 'Habra'),
+(1185, 0, 28, 'Ranaghat'),
+(1186, 0, 28, 'Bankura'),
+(1187, 0, 28, 'Nabadwip'),
+(1188, 0, 28, 'Darjiling'),
+(1189, 0, 28, 'Purulia'),
+(1190, 0, 28, 'Arambagh'),
+(1191, 0, 28, 'Tamluk'),
+(1192, 0, 28, 'AlipurdUrban Agglomerationr'),
+(1193, 0, 28, 'Suri'),
+(1194, 0, 28, 'Jhargram'),
+(1195, 0, 28, 'Gangarampur'),
+(1196, 0, 28, 'Rampurhat'),
+(1197, 0, 28, 'Kalimpong'),
+(1198, 0, 28, 'Sainthia'),
+(1199, 0, 28, 'Taki'),
+(1200, 0, 28, 'Murshidabad'),
+(1201, 0, 28, 'Memari'),
+(1202, 0, 28, 'Paschim Punropara'),
+(1203, 0, 28, 'Tarakeswar'),
+(1204, 0, 28, 'Sonamukhi'),
+(1205, 0, 28, 'PandUrban Agglomeration'),
+(1206, 0, 28, 'Mainaguri'),
+(1207, 0, 28, 'Malda'),
+(1208, 0, 28, 'Panchla'),
+(1209, 0, 28, 'Raghunathpur'),
+(1210, 0, 28, 'Mathabhanga'),
+(1211, 0, 28, 'Monoharpur'),
+(1212, 0, 28, 'Srirampore'),
+(1213, 0, 28, 'Adra'),
+(1214, 0, 29, 'Delhi'),
+(1215, 0, 29, 'New Delhi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client_category_master`
+--
+
+CREATE TABLE IF NOT EXISTS `client_category_master` (
+  `client_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_category_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`client_category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `client_category_master`
+--
+
+INSERT INTO `client_category_master` (`client_category_id`, `client_category_name`) VALUES
+(1, 'LIVE'),
+(2, 'E LIVE'),
+(3, 'HOT'),
+(4, 'E HOT');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company`
+--
+
+CREATE TABLE IF NOT EXISTS `company` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `company`
+--
+
+INSERT INTO `company` (`id`, `name`) VALUES
+(1, 'RAJ WATER');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_master`
+--
+
+CREATE TABLE IF NOT EXISTS `customer_master` (
+  `customer_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `address` text,
+  `state_id` int(11) DEFAULT NULL,
+  `city_id` int(11) DEFAULT NULL,
+  `mobile` varchar(255) DEFAULT NULL,
+  `mobile_2` varchar(255) DEFAULT NULL,
+  `mobile_3` varchar(255) DEFAULT NULL,
+  `office_address` text,
+  `landline` varchar(255) DEFAULT NULL,
+  `company` varchar(255) DEFAULT NULL,
+  `phone_no` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `email_2` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`customer_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `customer_master`
+--
+
+INSERT INTO `customer_master` (`customer_id`, `name`, `address`, `state_id`, `city_id`, `mobile`, `mobile_2`, `mobile_3`, `office_address`, `landline`, `company`, `phone_no`, `email`, `email_2`) VALUES
+(1, 'CUSTOMER', 'RAJKOT', 2, 2, '1455555555', '1455555555', '1455555555', 'OFFICE ADDRESS', '', 'COMPANY', '', 'test@gmail.com', 'test@gmail.com'),
+(3, 'customer new', 'test', 1, 1, '5666666666', NULL, NULL, 'test', '44444', 'comp', '56565656', 'test@gmail.com', NULL),
+(4, 'test cust', 'cust add', 2, 2, '1111111111', '2222222222', '3333333333', 'off', '6676', 'cmp', '45', 'sdf@sdf.sdf', 'sdf@sdf.sdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee`
+--
+
+CREATE TABLE IF NOT EXISTS `employee` (
+  `emp_id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) DEFAULT NULL,
+  `zone_id` int(11) DEFAULT NULL,
+  `state_id` int(11) DEFAULT NULL,
+  `city_id` int(11) DEFAULT NULL,
+  `username` varchar(255) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `mobile` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`emp_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`emp_id`, `role_id`, `zone_id`, `state_id`, `city_id`, `username`, `name`, `mobile`, `email`) VALUES
+(1, 2, 1, NULL, NULL, 'CALLER', 'CALLER', '1111111111', 'CALLER@GMAIL.COM'),
+(2, 3, 2, NULL, NULL, 'marketing', 'MARKETING', '2222222222', 'test@gmail.com'),
+(3, 3, 1, NULL, NULL, 'market', 'marketing 2', '3333333333', 'marketing2@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `follow_up`
+--
+
+CREATE TABLE IF NOT EXISTS `follow_up` (
+  `follow_up_id` int(11) NOT NULL AUTO_INCREMENT,
+  `inquiry_id` int(11) DEFAULT NULL,
+  `zone_id` int(11) DEFAULT NULL,
+  `follow_up_by` int(11) DEFAULT NULL,
+  `follow_up_date` date DEFAULT NULL,
+  `follow_up_taken_date` date DEFAULT NULL,
+  `next_follow_up_date` date DEFAULT NULL,
+  `follow_up_details` text,
+  `remarks` text,
+  `follow_up_status` int(11) DEFAULT '0',
+  PRIMARY KEY (`follow_up_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `follow_up`
+--
+
+INSERT INTO `follow_up` (`follow_up_id`, `inquiry_id`, `zone_id`, `follow_up_by`, `follow_up_date`, `follow_up_taken_date`, `next_follow_up_date`, `follow_up_details`, `remarks`, `follow_up_status`) VALUES
+(1, 2, 2, NULL, '2017-12-17', NULL, '2017-12-18', NULL, NULL, 0),
+(2, 2, 2, NULL, '2017-12-18', NULL, NULL, NULL, NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inquiry`
+--
+
+CREATE TABLE IF NOT EXISTS `inquiry` (
+  `inquiry_id` int(11) NOT NULL AUTO_INCREMENT,
+  `inquiry_date` date NOT NULL,
+  `inquiry_no` varchar(255) NOT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `product_category` varchar(255) NOT NULL,
+  `specification_id` int(11) NOT NULL,
+  `direct_visit` varchar(5) NOT NULL,
+  `insentive` varchar(255) NOT NULL,
+  `attended_by` int(11) NOT NULL DEFAULT '0',
+  `customer_type` varchar(255) DEFAULT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  `plant_detail` text,
+  `auth_person` text,
+  `client_category_id` int(11) DEFAULT NULL,
+  `source_id` int(11) DEFAULT NULL,
+  `payment_mode` text,
+  `visit_details` text,
+  `project_division` text,
+  `water_report` text,
+  `quotation_status` text,
+  `site_status` text,
+  `power_supply` text,
+  `raw_water_source` text,
+  `project_planing_stage` text,
+  `project_zone` int(11) NOT NULL,
+  `project_state` int(11) NOT NULL,
+  `project_city` int(11) NOT NULL,
+  `remarks` text,
+  `first_quatation_id` int(11) NOT NULL DEFAULT '0',
+  `first_follow_up_id` int(11) NOT NULL DEFAULT '0',
+  `added_by` text,
+  `updated_by` int(11) DEFAULT NULL,
+  `added_time` timestamp NULL DEFAULT NULL,
+  `updated_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`inquiry_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `inquiry`
+--
+
+INSERT INTO `inquiry` (`inquiry_id`, `inquiry_date`, `inquiry_no`, `product_id`, `category_id`, `product_category`, `specification_id`, `direct_visit`, `insentive`, `attended_by`, `customer_type`, `customer_id`, `plant_detail`, `auth_person`, `client_category_id`, `source_id`, `payment_mode`, `visit_details`, `project_division`, `water_report`, `quotation_status`, `site_status`, `power_supply`, `raw_water_source`, `project_planing_stage`, `project_zone`, `project_state`, `project_city`, `remarks`, `first_quatation_id`, `first_follow_up_id`, `added_by`, `updated_by`, `added_time`, `updated_time`) VALUES
+(2, '2017-12-20', 'INQ_1', 2, 4, 'ISI', 1, 'yes', 'yes', 0, 'new', 3, NULL, NULL, NULL, 2, 'Loan/Subsidy', NULL, NULL, NULL, NULL, 'Vacant Cunstruction', 'II', 'Natural Water', '3 months', 1, 1, 1, 'test', 1, 0, '1', NULL, '2017-12-21 06:17:24', '2017-12-22 07:25:55'),
+(5, '2017-12-26', 'INQ_3', 2, 4, 'ISI', 1, 'yes', 'yes', 3, 'new', 4, 'plnt', 'auth', 4, 2, 'Loan/Subsidy', 'Office Come Done', 'Domestic', 'water', 'Hard Copy', 'Vacant Cunstruction', 'I', 'Bore Well Water', 'Fast/Immediate', 2, 2, 2, '', 0, 0, '1', NULL, '2017-12-26 14:17:22', '2017-12-26 14:17:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `minimum_days`
+--
+
+CREATE TABLE IF NOT EXISTS `minimum_days` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) NOT NULL,
+  `days` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `minimum_days`
+--
+
+INSERT INTO `minimum_days` (`id`, `type`, `days`) VALUES
+(1, 'quatation', '5'),
+(2, 'followup', '2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_master`
+--
+
+CREATE TABLE IF NOT EXISTS `product_master` (
+  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`product_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `product_master`
+--
+
+INSERT INTO `product_master` (`product_id`, `product_name`) VALUES
+(1, '500LPH FRP RO WITH OZON'),
+(2, '20000LPH SS RO FULLY AUTOMATION');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quatation`
+--
+
+CREATE TABLE IF NOT EXISTS `quatation` (
+  `quatation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `q_master_id` int(11) NOT NULL,
+  `inquiry_id` int(11) NOT NULL,
+  `zone_id` int(11) NOT NULL,
+  `inquiry_no` varchar(255) NOT NULL,
+  `inquiry_date` date NOT NULL,
+  `quatation_no` varchar(255) NOT NULL,
+  `quatation_date` date NOT NULL,
+  `added_by` int(11) NOT NULL DEFAULT '0',
+  `updated_by` int(11) NOT NULL DEFAULT '0',
+  `added_time` timestamp NULL DEFAULT NULL,
+  `updated_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`quatation_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `quatation`
+--
+
+INSERT INTO `quatation` (`quatation_id`, `q_master_id`, `inquiry_id`, `zone_id`, `inquiry_no`, `inquiry_date`, `quatation_no`, `quatation_date`, `added_by`, `updated_by`, `added_time`, `updated_time`) VALUES
+(1, 1, 2, 1, 'INQ_1', '2017-12-20', 'Q_1', '2017-12-22', 1, 0, '2017-12-22 07:25:55', '2017-12-22 07:25:55'),
+(2, 2, 5, 2, 'INQ_3', '2017-12-23', 'Q_2', '2017-12-23', 1, 0, '2017-12-23 07:54:27', '2017-12-27 04:56:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quatation_master`
+--
+
+CREATE TABLE IF NOT EXISTS `quatation_master` (
+  `q_master_id` int(11) NOT NULL AUTO_INCREMENT,
+  `inquiry_id` int(11) NOT NULL,
+  `zone_id` int(11) NOT NULL,
+  PRIMARY KEY (`q_master_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `quatation_master`
+--
+
+INSERT INTO `quatation_master` (`q_master_id`, `inquiry_id`, `zone_id`) VALUES
+(1, 2, 1),
+(2, 3, 2),
+(3, 4, 2),
+(4, 5, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `revise_quatation`
+--
+
+CREATE TABLE IF NOT EXISTS `revise_quatation` (
+  `revise_id` int(11) NOT NULL AUTO_INCREMENT,
+  `quatation_id` int(11) NOT NULL,
+  `revise_quatation_no` varchar(255) NOT NULL,
+  `revise_date` date NOT NULL,
+  `added_by` int(11) NOT NULL DEFAULT '0',
+  `updated_by` int(11) NOT NULL DEFAULT '0',
+  `added_time` timestamp NULL DEFAULT NULL,
+  `updated_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`revise_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `revise_quatation`
+--
+
+INSERT INTO `revise_quatation` (`revise_id`, `quatation_id`, `revise_quatation_no`, `revise_date`, `added_by`, `updated_by`, `added_time`, `updated_time`) VALUES
+(2, 2, 'R2_Q_1', '2017-12-25', 1, 0, '2017-12-25 07:30:26', '2017-12-25 07:30:44'),
+(3, 2, 'R2_Q_2', '2017-12-25', 1, 0, '2017-12-25 07:31:07', '2017-12-25 07:31:07'),
+(4, 2, 'R3_Q_2', '2017-12-26', 1, 0, '2017-12-26 10:53:09', '2017-12-26 10:53:09'),
+(5, 2, 'R4_Q_2', '2017-12-27', 1, 0, '2017-12-27 05:17:52', '2017-12-27 05:17:52'),
+(6, 1, 'R1_Q_1', '2017-12-27', 1, 0, '2017-12-27 05:18:10', '2017-12-27 05:18:10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `role_master`
+--
+
+CREATE TABLE IF NOT EXISTS `role_master` (
+  `role_id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `role_master`
+--
+
+INSERT INTO `role_master` (`role_id`, `role_name`) VALUES
+(1, 'Admin'),
+(2, 'Caller'),
+(3, 'Marketing Co-ordinator'),
+(4, 'Sales Co-ordinator');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `source_master`
+--
+
+CREATE TABLE IF NOT EXISTS `source_master` (
+  `source_id` int(11) NOT NULL AUTO_INCREMENT,
+  `source_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`source_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `source_master`
+--
+
+INSERT INTO `source_master` (`source_id`, `source_name`) VALUES
+(1, 'INDIAMART BUY LEAD'),
+(2, 'INDIAMART WEB');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `specification_master`
+--
+
+CREATE TABLE IF NOT EXISTS `specification_master` (
+  `specification_id` int(11) NOT NULL AUTO_INCREMENT,
+  `specification` text NOT NULL,
+  PRIMARY KEY (`specification_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `specification_master`
+--
+
+INSERT INTO `specification_master` (`specification_id`, `specification`) VALUES
+(1, 'Test');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `state_master`
+--
+
+CREATE TABLE IF NOT EXISTS `state_master` (
+  `state_id` int(11) NOT NULL AUTO_INCREMENT,
+  `zone_id` int(11) NOT NULL DEFAULT '0',
+  `state_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`state_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+
+--
+-- Dumping data for table `state_master`
+--
+
+INSERT INTO `state_master` (`state_id`, `zone_id`, `state_name`) VALUES
+(1, 0, 'Andhra Pradesh'),
+(2, 0, 'Arunachal Pradesh'),
+(3, 0, 'Assam'),
+(4, 0, 'Bihar'),
+(5, 0, 'Chhattisgarh'),
+(6, 0, 'Goa'),
+(7, 0, 'Gujarat'),
+(8, 0, 'Haryana'),
+(9, 0, 'Himachal Pradesh'),
+(10, 0, 'Jammu and Kashmir'),
+(11, 0, 'Jharkhand'),
+(12, 0, 'Karnataka'),
+(13, 0, 'Kerala'),
+(14, 0, 'Madhya Pradesh'),
+(15, 0, 'Maharashtra'),
+(16, 0, 'Manipur'),
+(17, 0, 'Meghalaya'),
+(18, 0, 'Mizoram'),
+(19, 0, 'Nagaland'),
+(20, 0, 'Odisha(Orissa)'),
+(21, 0, 'Punjab'),
+(22, 0, 'Rajasthan'),
+(23, 0, 'Sikkim'),
+(24, 0, 'Tamil Nadu'),
+(25, 0, 'Tripura'),
+(26, 0, 'Uttar Pradesh'),
+(27, 0, 'Uttarakhand'),
+(28, 0, 'West Bengal'),
+(29, 0, 'Delhi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) DEFAULT NULL,
+  `emp_id` int(11) NOT NULL DEFAULT '0',
+  `username` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `mobile` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `role_id`, `emp_id`, `username`, `email`, `mobile`, `password`) VALUES
+(1, 1, 0, 'admin', NULL, NULL, 'e10adc3949ba59abbe56e057f20f883e'),
+(2, 2, 1, 'CALLER', 'CALLER@GMAIL.COM', '1111111111', 'e11170b8cbd2d74102651cb967fa28e5'),
+(3, 3, 2, 'MARKETING', 'test@gmail.com', '2222222222', 'e10adc3949ba59abbe56e057f20f883e'),
+(4, 3, 3, 'market', 'marketing2@gmail.com', '3333333333', 'e10adc3949ba59abbe56e057f20f883e');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zone_master`
+--
+
+CREATE TABLE IF NOT EXISTS `zone_master` (
+  `zone_id` int(11) NOT NULL AUTO_INCREMENT,
+  `zone_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`zone_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `zone_master`
+--
+
+INSERT INTO `zone_master` (`zone_id`, `zone_name`) VALUES
+(1, 'EAST'),
+(2, 'WEST'),
+(3, 'NORTH'),
+(4, 'SOUTH'),
+(5, 'CENTRAL');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

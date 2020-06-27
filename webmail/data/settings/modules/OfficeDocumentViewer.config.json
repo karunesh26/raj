@@ -1,0 +1,10 @@
+{
+    "Disabled": [
+		false,
+		"bool"
+	],
+	"ViewerUrl": [
+		"https://view.officeapps.live.com/op/embed.aspx?src=",
+		"string"
+	]
+}
